@@ -2,7 +2,7 @@ package coordinate;
 
 import java.util.List;
 
-public class Rectangle extends AbstractFigure {
+public class Rectangle extends AbstractFigure implements FigureCreator {
     public Rectangle(List<Point> points) {
         super(points);
     }
@@ -20,5 +20,10 @@ public class Rectangle extends AbstractFigure {
     @Override
     public double area() {
         return 0;
+    }
+
+    @Override
+    public Figure create(List<Point> points) {
+        return new Rectangle(points);
     }
 }
